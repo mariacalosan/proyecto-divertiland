@@ -1,0 +1,492 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+ body {
+	font-family: 'Roboto', sans-serif;
+}
+.icono-menu-movile{
+	position: absolute;
+	top: 25px;
+}
+
+
+/*logos*/
+.brand-logo{
+	position: relative;
+	left: -150px;
+  }
+.logo-compras{
+  width: 20px;
+}
+.logo-diverty{
+  width: 65px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+/*Menu*/
+nav{
+  background-color: #c9eef4;
+  height: 75px;
+}
+ul li {
+  position: relative;
+  left: 70px;
+  
+}
+ul li a{
+  color: black;
+}
+.container-texto{
+  background-image: url(/img/algodondeazucar.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  
+}
+/*textos-banner*/
+.subtitulo{
+  font-size: 25px;
+  color: hsl(0, 0%, 0%);
+  font-weight: 500;
+}
+.parrafo-banner{
+  font-size: 20px;
+}
+.iconos-redes{
+  width: 33px;
+  height: 33px;
+}
+.row1 label{
+  position: relative;
+  display: flex;
+  margin-left: 45px;
+  
+  bottom: 30px;
+  color: #000000;
+}
+
+
+/*main*/
+
+.contenedor {
+	margin: auto;
+	padding: 60px 0;
+	width: 90%;
+	max-width: 1000px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.contenedor h3 {
+	font-size: 33px;
+	margin-bottom: 20px;
+}
+
+.after::after {
+	content: '';
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	width: 100px;
+	height: 2px;
+	margin-bottom: 45px;
+}
+
+.about {
+	height: auto;
+}
+
+.servicios {
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	flex-wrap: wrap;
+}
+
+.caja-servicios {
+	width: 30%;
+	margin: auto;
+	text-align: center;
+}
+
+.caja-servicios>h4 {
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.caja-servicios>p {
+	text-align: center;
+}
+
+.caja-servicios img {
+	width: 170px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.service2 {
+	margin-top: 15px;
+}
+.service3{
+	position: relative;
+	bottom: 10px;
+}
+.titulo-servicio-3{
+	position: relative;
+	bottom: 13px;
+}
+
+
+.botoncompra1,
+.botoncompra2,
+.botoncompra3 {
+	text-decoration: none;
+	color: #000000;
+	background-color: #E0C2CA;
+	border-radius: 10px;
+	display: inline;
+	position: relative;
+	top: 30px;
+	padding: 10px;
+}
+.botoncompra1:hover,
+.botoncompra2:hover,
+.botoncompra3:hover{
+	background-color: #c9eef4;
+	transition: .5s;
+}
+
+.botoncompra2 {
+	position: relative;
+	top: 28px;
+}
+
+.botoncompra3 {
+	position: relative;
+	top: 36px;
+}
+
+/*Media querys*/
+
+/*Modificacion de textos y demas mediaquerys*/
+@media  screen and  (width:375px){
+	.after{
+		font-size: 15px;
+	}
+	.parrafo-servicio1,
+	.parrafo-servicio2,
+	.parrafo-servicio3{
+		font-size: 17px;
+	}
+
+}
+@media  screen and  (width:411px){
+	.after{
+		font-size: 17px;
+	}
+	.parrafo-servicio1,
+	.parrafo-servicio2,
+	.parrafo-servicio3{
+		font-size: 17px;
+	}
+
+}
+@media  screen and  (width:414px){
+	.after{
+		font-size: 17px;
+	}
+	.parrafo-servicio1,
+	.parrafo-servicio2,
+	.parrafo-servicio3{
+		font-size: 17px;
+	}
+
+}
+	
+
+@media screen and (max-width:540px){
+	.caja-servicios {
+		width: 90%;
+		margin-bottom: 60px;
+	}
+	.titulo-acerca-de-nosotros{
+		font-size: 25px;
+	}
+	.parrafo-acerca-de-nosotros{
+		font-size: 17px;
+	}
+	.titulo-informacion-contacto{
+		font-size: 25px;
+	}
+	.direccion{
+		font-size: 17px;
+	}
+	.telefono{
+		font-size: 17px;
+	}
+	.email{
+		font-size: 17px;
+	}
+	.titulo-redes{
+		font-size: 25px;
+	}
+	.parrafo-facebook{
+		font-size: 17px;
+	}
+	.parrafo-instagram{
+		font-size: 17px;
+	}
+	.parrafo-pinterest{
+		font-size: 17px;
+	}
+	.footer-copyright{
+		font-size: 17px;
+	}
+
+}
+@media screen and (width:768px){
+	.after {
+		font-size: 22px;
+	}
+	.caja-servicios h4 {
+		font-size: 24px;
+	}
+	.parrafo-servicio1 {
+		font-size: 22px;
+	}
+	.service2 {
+		position: relative;
+		bottom: 2px;
+	}
+	.service3 {
+		position: relative;
+		bottom: 37px;
+	}
+	.titulo-carros-chocones {
+		position: relative;
+		bottom: 5px;
+	}
+	.parrafo-servicio2 {
+		font-size: 22px;
+	}
+	.parrafo-servicio3 {
+		font-size: 22px;
+	}
+	.titulo-servicio-3 {
+		position: relative;
+		bottom: 42px;
+	}
+	.botoncompra1 {
+		position: relative;
+		top: 34px;
+		font-size: 22px;
+		padding: 15px;
+	}
+	.botoncompra2 {
+		position: relative;
+		top: 30px;
+		font-size: 22px;
+		padding: 15px;
+	}
+	.botoncompra3 {
+		position: relative;
+		top: 65px;
+		font-size: 22px;
+		padding: 15px;
+	}
+	.titulo-acerca-de-nosotros{
+		font-size: 27px;
+	}
+	.parrafo-acerca-de-nosotros{
+		font-size: 22px;
+	}
+	.titulo-informacion-contacto{
+		font-size: 27px;
+	}
+	.direccion{
+		font-size: 22px;
+	}
+	.telefono{
+		font-size: 22px;
+	}
+	.email{
+		font-size: 22px;
+	}
+	.titulo-redes{
+		font-size: 27px;
+	}
+	.parrafo-facebook{
+		font-size: 22px;
+	}
+	.parrafo-instagram{
+		font-size: 22px;
+	}
+	.parrafo-pinterest{
+		font-size: 22px;
+	}
+	.footer-copyright{
+		font-size: 22px;
+	}
+
+}
+@media  screen and (max-width:1101px) {
+	ul li {
+	  font-size: 5px;
+	  position: relative;
+	  left: 5px;
+	}
+	.logo-compras{
+	  width: 20px;
+	  position: relative;
+	  margin-left: 750px;
+	  bottom: 70px;
+	  left: 15px;
+	}
+	
+  }
+
+@media screen and (width:1024px){
+	ul li a{
+		position: relative;
+		left: 95px;
+		padding: 15px;
+		font-size: 15px;
+	}
+	
+	nav{
+		height: 95px;
+	}
+
+	/*logo*/
+	.logo-diverty {
+		position: relative;
+		right: -20px;
+		width: 90px;
+		height: 90px;
+		object-fit: cover;
+	}
+	.service2 {
+		position: relative;
+		bottom: 17px;
+	}
+	.service3 {
+		position: relative;
+		bottom: 32px;
+	}
+	.subtitulo {
+		font-size: 30px;
+	}
+	.parrafo-banner{
+		font-size: 25px;
+	}
+	.after {
+		font-size: 22px;
+	}
+	
+	.caja-servicios h4 {
+		font-size: 27px;
+	}
+	.titulo-carros-chocones {
+		position: relative;
+		bottom: 17px;
+	}
+	
+	.titulo-servicio-3 {
+		position: relative;
+		bottom: 35px;
+	}
+	.parrafo-servicio1 {
+		font-size: 22px;
+	}
+	.parrafo-servicio2 {
+		font-size: 22px;
+	}
+	.parrafo-servicio3 {
+		font-size: 22px;
+		position: relative;
+		bottom: 17px;
+	}
+	.botoncompra1,
+	.botoncompra2,
+	.botoncompra3 {
+		position: relative;
+		bottom: 190px;
+		font-size: 22px;
+		padding: 15px;
+		
+	}
+	.botoncompra2{
+		position: relative;
+		top: 43px;
+	}
+	.botoncompra3{
+		position: relative;
+		top: 58px;
+	}
+	/*Footer*/
+	.titulo-acerca-de-nosotros{
+		font-size: 27px;
+	}
+	.parrafo-acerca-de-nosotros{
+		font-size: 25px;
+	}
+	.titulo-informacion-contacto{
+		font-size: 27px;
+	}
+	.direccion{
+		font-size: 25px;
+	}
+	.telefono{
+		font-size: 25px;
+	}
+	.email{
+		font-size: 25px;
+	}
+	.titulo-redes{
+		font-size: 27px;
+	}
+	.parrafo-facebook{
+		font-size: 25px;
+	}
+	.parrafo-instagram{
+		font-size: 25px;
+	}
+	.parrafo-pinterest{
+		font-size: 25px;
+	}
+	.footer-copyright{
+		font-size: 25px;
+	}
+}
+
+
+/*Tablas crud*/
+.titulo_crud_reservas{
+	font-size: 15px;
+	margin: 45px 20px;
+}
+.crear-reserva{
+	margin: 45px 15px;
+	background-color: rgb(248, 193, 10);
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+	position: relative;
+	bottom: 20px;
+	overflow: hidden;
+}
+@media screen and (min-width:1102px){
+	.pagination{
+		position: relative;
+		left: -60px;
+	}
+}
+/*formularios¨*/

@@ -1,0 +1,62 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block titulo %}Detalles {% endblock %}
+
+{% block contenedor %}
+  <main>
+    
+    <table class="stripped highlight centered responsive-table ">
+        <thead>
+            <tr class="grey lighten-2">
+                <th >Id Venta</th>
+                <th>Atracciones</th>
+                <th>Costo </th>
+                <th>Cantidad</th>
+                <th>Total a pagar</th>
+             
+               
+                <th>Acciones</th>
+                
+            </tr>
+        </thead>
+        <br>
+        <tbody>
+            <tr>
+                <td>12312323</td>
+                <td>19000</td>
+                <td>Pony</td>
+                <td>
+                    <div class="cantidad-articulos">
+                    <form action="#"method="POST">
+                        <input type="text" name="quantify" min="1"max="100"value="1"class="cantidad">
+                    </form>
+                </div>
+                </td>
+               
+                
+                <td>
+                    <a href="#" class="material-icons  red-text  ">
+                        delete
+                    </a>
+                        
+                </td>
+            </tr>
+          
+            
+            
+        </tbody>
+        
+    </table>
+    <ul class="pagination">
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="active"><a href="#!">1</a></li>
+        <li class="waves-effect waves-teal "><a href="#!">2</a></li>
+        <li class="waves-effect"><a href="#!">3</a></li>
+        <li class="waves-effect"><a href="#!">4</a></li>
+        <li class="waves-effect"><a href="#!">5</a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+      </ul>
+
+  </main>
+  {% endblock %}
+  

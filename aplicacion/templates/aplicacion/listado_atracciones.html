@@ -1,0 +1,102 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block titulo %}Atracciones {% endblock %}
+{% block js %}
+<script>
+    function eliminarAtracciones(id){
+        Swal.fire({
+            "title":"¿Estás Seguro?",
+            "text":"Esta accion no se puede deshacer",
+            "icon":"question",
+            "showCancelButton":true,
+            "cancelButtonText":"No,cancelar",
+            "confirmButtonText":"Sí,eliminar",
+            "reverseButtons":true,
+            "confirmButtonColor":"#F44339"
+        })
+        .then (function(result){
+            if (result.isConfirmed){
+                window.location.href="/diverty/eliminar_atracciones/"+id+"/"
+            }
+
+
+        })
+    }
+</script>
+{% endblock %}
+{% block contenedor %}
+{% load humanize %}
+
+
+
+<main>
+    <h1 class="titulo_crud_reservas">Lista de atracciones </h1>
+
+
+
+    <a class="crear-reserva" href="{% url 'diverty:guardar_atracciones' %}">
+
+
+        Crear atracciones +</a>
+    {% if atracciones %}
+    <table class="stripped highlight centered responsive-table ">
+        <thead>
+            <tr class="grey lighten-2">
+                <th>Id atraccion</th>
+                <th>Nombre</th>
+                <th>Capacidad</th>
+                <th>Fecha</th>
+                <th>Precio</th>
+                <th>Promociones</th>
+                <th>Reserva</th>
+                <th>Acciones</th>
+
+
+            </tr>
+        </thead>
+        <br>
+        {% for registros in atracciones %}
+        <tbody>
+            <tr>
+                <td>{{ registros.id_atraccion }}</td>
+                <td>{{ registros.nombre }}</td>
+                <td>{{ registros.capacidad }}</td>
+                <td>{{ registros.fecha }}</td>
+                <td>{{ registros.precio| intcomma }}</td>
+                <td>{{ registros.promociones }}</td>
+                <td>{{ registros.reserva }}</td>
+               
+
+
+                <td>
+                    <a onclick="eliminarAtracciones ({{registros.id_atraccion}})" href="#" class="material-icons  red-text  ">
+                        delete
+                    </a>
+                    <a href="{% url 'diverty:modificar_atracciones' registros.id_atraccion %}" class="material-icons yellow-text text-darken-4">
+                        mode_edit
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+
+
+
+        </tbody>
+    {% else %}
+    No hay datos
+    {% endif %}
+
+
+    </table>
+    <ul class="pagination">
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="active"><a href="#!">1</a></li>
+        <li class="waves-effect waves-teal "><a href="#!">2</a></li>
+        <li class="waves-effect"><a href="#!">3</a></li>
+        <li class="waves-effect"><a href="#!">4</a></li>
+        <li class="waves-effect"><a href="#!">5</a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+
+</main>
+{% endblock %}

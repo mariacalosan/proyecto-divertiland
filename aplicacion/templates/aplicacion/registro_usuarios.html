@@ -1,0 +1,68 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block titulo %}login {% endblock %}
+
+{% block contenedor %}
+<!--Aqui va el div padre-->
+<div class="contenedor-principal">
+    <div class="section container ">
+
+
+        <h1 class="center-align black-text welcome ">Bienvenido!!!</h1>
+        <div class="row card-panel">
+            <form class="col s12" action="{% url 'diverty:registrar_usuario' %}" method="POST" onsubmit="return validarPasswordRegistro();">
+                {% csrf_token %}
+                <div class="row ">
+                    <div class="input-field col s9">
+                        <span class="material-icons prefix">
+                            people
+                        </span>
+                        <input type="text" name="usuario" id="nombre_usuario " class="validate" required>
+                        <span class="helper-text" data-error="Ingrese nombre valido"></span>
+                        <label for="nombre_usuario" class="black-text">Nombre</label>
+                    </div>
+                    <div class="input-field col s9">
+                        <span class="material-icons prefix">
+                            markunread
+                        </span>
+                        <input type="email" name="email" id="email_usuario" class="validate" required>
+                        <span class="helper-text " data-error="Ingrese un email valido"></span>
+                        <label for="email_usuario" class="black-text">Email</label>
+                    </div>
+                    <div class="input-field col s9">
+                        <span class="material-icons prefix">
+                            markunread
+                        </span>
+                        <input type="password" name="clave" id="clave" class="validate" required>
+                        <span class="helper-text " data-error="Ingrese una contraseña valida"></span>
+                        <label for="clave" class="black-text">Contraseña</label>
+                    </div>
+                    <div class="input-field col s9">
+                        <span class="material-icons prefix">
+                            markunread
+                        </span>
+                        <input type="password" name="clave2" id="clave2" class="validate" required>
+                        <span class="helper-text " data-error="Ingrese una contraseña valida"></span>
+                        <label for="clave2" class="black-text">Contraseña</label>
+                    </div>
+
+                    <div class="input-field col s9">
+                        <span class="material-icons prefix">
+                            markunread
+                        </span>
+                        <select name="rol">
+                            <option value="">Seleccione su Rol</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Empleado</option>
+                            <option value="3">Cliente</option>
+                        </select>
+                    </div>
+                    <div class="input-field col s4">
+                        <button class="btn " type="submit">Guardar</button>
+
+                    </div>
+                </form>
+                </div>
+        </div>
+    </div>
+    {% endblock %}

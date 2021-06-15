@@ -1,0 +1,21 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block titulo %} Atracciones {% endblock %}
+
+
+{% block contenedor %}
+{% load materializecss %}
+<h1 class="center-align white-text">Registro de atracciones</h1>
+
+<form class="col s12" method="POST" action="">
+      {% csrf_token %}
+      {{ form|materializecss}}
+
+      <button type="submit" class="btn">Enviar</button>
+
+
+</form>     
+
+{% endblock %}
+
+

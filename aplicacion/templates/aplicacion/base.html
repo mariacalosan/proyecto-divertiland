@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Seo-->
+  <meta name="robots" content="index,follow">
+  <meta name="description"
+    content="somo una compañia que brinda servicios de optimizacion de tu tiempo para reservar entradas a nuestras atracciones ">
+  <meta name="keywords"
+    content="servicio de atencion de boletas, servicio de atracciones, tobogan, carritos chocones, carrusel  ">
+  <meta name="autor" content="Maria camila lopez">
+  <meta name="copyright" content="Divertiland S.A">
+  <title>Divertiland-{%block titulo %}Inicio{%endblock %}</title>
+
+  <!--fuente pagina web-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <!--Preloaders css-->
+  <link rel="preloader" href="{% static 'aplicacion/css/iconos.css' %}" as="style">
+  <link rel="preloader" href="{% static 'aplicacion/css/materialize.css'%}" as="style" media="screen,projection">
+  <link rel="preloader" href="{% static 'aplicacion/css/style.css'%}" as="style">
+  <link rel="prealoader" href="{% static 'aplicacion/css/formularios.css'%}" as="style">
+  <!--Preloaders js-->
+  <script src="{% static 'aplicacion/js/jquery-2.1.1.min.js'%}" as="script"></script>
+  <script src="{% static 'aplicacion/js/materialize.min.js'%}" as="script"></script>
+  <script src="{% static 'aplicacion/js/init.js'%}" crossorigin="anonymous" as="script"></script>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="{% static 'aplicacion/css/iconos.css' %}">
+  <link rel="stylesheet" href="{% static 'aplicacion/css/materialize.css'%}" media="screen,projection" />
+  <link href="{% static 'diverty/css/style.css'%}" type="text/css" rel="stylesheet" />
+  {% block css %}
+  {% endblock %}
+  <link href="{% static 'aplicacion/css/formularios.css'%}" type="text/css" rel="stylesheet" />
+  <!--Favicons-->
+  <link rel="apple-touch-icon" sizes="57x57" href="{% static 'aplicacion/img/apple-icon-57x57.png'%}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{% static 'aplicacion/img/apple-icon-60x60.png'%}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static 'aplicacion/img/apple-icon-76x76.png'%}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'aplicacion/img/apple-icon-76x76.png'%}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static 'aplicacion/img/apple-icon-114x114.png'%}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static 'aplicacion/img/apple-icon-120x120.png'%}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{% static 'aplicacion/img/apple-icon-144x144.png'%}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static 'aplicacion/img/apple-icon-152x152.png'%}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'aplicacion/img/apple-icon-180x180.png'%}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{% static 'aplicacion/img/android-icon-192x192.png'%}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'aplicacion/img/favicon-32x32.png'%}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static 'aplicacion/img/favicon-96x96.png'%}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'aplicacion/img/favicon-16x16.png'%}">
+
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <!--Navbar-->
+  <div class="navbar-fixed ">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo"><img class="responsive-img logo-diverty"
+            src="{% static 'aplicacion/img/logo.webp' %}" alt="logo de divertiland"></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{% url 'aplicacion:index' %}">Inicio</a></li>
+          <li><a href="#contacto">Acerca de nosotros</a></li>
+          <li>
+            <a href="#" class="dropdown-trigger" data-target="id_drop">
+              <i class="material-icons right">account_box</i>
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+            <ul id="id_drop" class="dropdown-content">
+              <li><a href="#">Cerrar Sesion</a></li>
+
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li>
+      <a href="#" class="dropdown-trigger" data-target="id_drop1">
+        <i class="material-icons center">account_box</i>
+        <i class="material-icons left">arrow_drop_down</i>
+      </a>
+      <ul id="id_drop1" class="dropdown-content">
+        <li><a href="#">Cerrar Sesion</a></li>
+
+      </ul>
+    </li>
+  </ul>
+
+
+
+
+  {% block contenedor %}
+  {% endblock %}
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row contenedor-footer">
+        <div class="col l6 s12">
+          <h3 class=" informacion-compañia black-text">Más informacion de la compañia</h3>
+
+          <p class="black-text">nos dedicamos a ofrecer servivios de atracciones</p>
+          <h3 class="informacion-contacto black-text">Informacion Contactos</h3>
+          <ul>
+            <img src="{% static 'diverty/img/home-page.svg' %}" alt="Icono de una casa">
+            <label class="black-text" for="">calle10b sur #54 b 18, Medellín, Antioquia</label>
+            <img src="{% static 'diverty/img/llamada-telefonica.svg' %}" alt="Icono de llamada">
+            <label class="black-text" for="">+57 3008392839</label>
+            <img src="{% static 'diverty/img/Email.svg' %}" alt="Icono de pinterest">
+            <label class="black-text" for="">mariacalosan@gmail.com</label>
+
+          </ul>
+        </div>
+
+        <div class="col l4 offset-l2 s12">
+          <h3 class="informacion-redes black-text">Redes sociales</h3>
+          <ul>
+            <img src="{% static 'aplicacion/img/facebook.svg' %}" alt="Icono de facebook">
+            <label class="black-text" for="">divertiland </label>
+            <img src="{% static 'aplicacion/img/instagram.svg' %}" alt="Icono de instagram">
+            <label class="black-text" for="">en instagram nos puedes encontrar como divertiland@Divertiland</label>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class=" footer-copyright">
+      <div class="container">
+        © 2021 Todos los Derechos Reservados | Maria camila lopez
+        <a class="grey-text text-lighten-4  link-termino-condiciones" href="#!">Informacion Compañia | Privacion y
+          Politica | Terminos y Condiciones</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="{% static 'aplicacion/js/jquery-2.1.1.min.js'%}"></script>
+  <script src="{% static 'aplicacion/js/materialize.min.js'%}"></script>
+  <script src="{% static 'aplicacion/js/libreria.js'%}"></script>
+  <script src="{% static 'aplicacion/js/sweetalert2@10.js'%}"></script>
+  <script src="{% static 'aplicacion/js/init.js'%}" crossorigin="anonymous"></script>
+  {% if messages %}
+        {% for m in messages %}
+              <script>
+
+                  Swal.fire({
+                    "title":"felicitaciones",
+                    "text":"{{m}}",
+                    "icon":"success"
+                  })
+              </script>
+        {% endfor %}
+  {% endif %}
+
+
+  {% block js %}
+  {% endblock %}
+
+</body>
+
+</html>

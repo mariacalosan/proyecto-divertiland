@@ -1,0 +1,26 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block titulo %} Atracciones {% endblock %}
+
+{% block contenedor %}
+{% load materializecss %}
+
+<div class="row">
+  <h1 class="center-align black-text">Editar Atracciones</h1>
+
+  <form class="col s12" method="POST" action="">
+    {% csrf_token %}
+
+
+    {{ form| materializecss }}
+    <input type="reset" value="Cancelar" class="btn ">
+    &nbsp;
+
+    <button type="submit" class="btn ">Editar</button>
+</div>
+
+
+</form>
+{{ mensaje }}
+
+{% endblock %}

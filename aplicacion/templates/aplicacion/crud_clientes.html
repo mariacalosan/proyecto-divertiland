@@ -1,0 +1,101 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block titulo %}Clientes {% endblock %}
+{% block js %}
+
+<script>
+    function eliminarClientes(id){
+        Swal.fire({
+            "title":"Estás seguro?",
+            "text":"esta accion no se puede deshacer",
+            "icon":"question",
+            "showCancelButton":true,
+            "cancelButtonText":"No,cancelar",
+            "confirmButtonText":"Si,eliminar",
+            "reverseButtons":true,
+            "confirmButtonColor": "#F44339"
+        })
+        .then(function(result){
+            if (result.isConfirmed){
+                window.location.href="/diverty/eliminar-clientes/"+id+"/"
+            }
+        })
+
+        
+
+    }
+</script>
+
+{% endblock %}
+
+
+{% block contenedor %}
+<main>
+    <h1 class="titulo_crud_reservas">Lista de clientes </h1>
+
+
+
+    <a class="crear-reserva" href="{% url 'diverty:agregar_clientes' %}">
+
+    
+        Crear clientes +</a>
+    {% if clientes %}
+    <table class="stripped highlight centered responsive-table ">
+        <thead>
+            <tr class="grey lighten-2">
+                <th>Id cliente</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Acciones</th>
+
+
+            </tr>
+        </thead>
+        
+        <br>
+        
+        <tbody>
+        {% for registro in clientes %}
+        
+            <tr>
+                
+                <td>{{ registro.id_cliente }}</td>
+                <td>{{ registro.nombre | title  }}</td>
+                <td>{{ registro.apellido | title }}</td>
+                <td>{{ registro.edad }}</td>
+                <td>{{ registro.direccion }}</td>
+                <td>{{ registro.telefono }}</td>
+
+                <td>
+                    <a  href="#" onclick="eliminarClientes({{registro.id_cliente}})" class="material-icons  red-text  ">
+                        delete
+                    </a>
+                    <a href="{% url 'diverty:modificar_clientes' registro.id_cliente %}" class="material-icons yellow-text text-darken-4">
+                        mode_edit
+                    </a>
+                </td>
+            </tr>
+
+
+
+        </tbody>
+        {% endfor %}
+    </table>
+    {% else %}
+    No hay datos aun
+    {% endif %}
+    <ul class="pagination">
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="active"><a href="#!">1</a></li>
+        <li class="waves-effect waves-teal "><a href="#!">2</a></li>
+        <li class="waves-effect"><a href="#!">3</a></li>
+        <li class="waves-effect"><a href="#!">4</a></li>
+        <li class="waves-effect"><a href="#!">5</a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+
+</main>
+{% endblock %}
