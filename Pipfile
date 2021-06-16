@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+
+[dev-packages]
+pylint = "*"
+autopep8 = "*"
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+start           = "python manage.py runserver"
+makemigration   = "python manage.py makemigration"
+migrate         = "python manage.py migrate"
