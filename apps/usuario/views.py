@@ -6,8 +6,7 @@ from django.urls import reverse_lazy
 
 
 class RegistroUsuario(CreateView):
-	model = User
-	template_name = "usuario/registrar.html"
-	form_class = RegistroForm
-	success_url = reverse_lazy('mascota:mascota_listar')
-
+		model = User
+		template_name = "usuario/registrar.html"
+		form_class = RegistroForm
+		success_url = reverse_lazy('aplicacion:index')
