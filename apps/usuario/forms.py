@@ -32,6 +32,7 @@ class RegistroForm(UserCreationForm, forms.ModelForm):
 
 		self.fields['password1'].widget.attrs['class'] = 'form-control'
 		self.fields['password2'].widget.attrs['class'] = 'form-control'
+
 class ClienteForm(forms.ModelForm):
 	class Meta:
 		model = Cliente
@@ -41,17 +42,16 @@ class ClienteForm(forms.ModelForm):
 			'direccion',
 			'telefono',
 		]
-
 		labels = {
 			'identificacion': 'Numero de identificacion',
 			'fecha_nacimiento': 'Fecha de nacimiento',
 			'direccion': 'Direccion',
 			'telefono': 'Numero de telefono'
 		}
-
+		YEARS = [x for x in range(1940,2022)]
 		widgets = {
 			'identificacion': forms.TextInput(attrs={'class': 'form-control'}),
-			'fecha_nacimiento': forms.SelectDateWidget(),
+			'fecha_nacimiento': forms.SelectDateWidget(years=YEARS, attrs={'class': 'form-control fecha-control'}),
 			'direccion': forms.TextInput(attrs={'class': 'form-control'}),
 			'telefono': forms.TextInput(attrs={'class': 'form-control'}),
 		}

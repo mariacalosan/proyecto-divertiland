@@ -17,5 +17,6 @@ python_version = "3.9"
 
 [scripts]
 start           = "python manage.py runserver"
-makemigration   = "python manage.py makemigration"
+makemigrations  = "python manage.py makemigrations"
 migrate         = "python manage.py migrate"
+createadmin     = "python manage.py createsuperuser --username admin --email 'admin@email.com'"

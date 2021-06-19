@@ -8,7 +8,7 @@ class Cliente(models.Model):
 	identificacion = models.PositiveBigIntegerField()
 	fecha_nacimiento = models.DateField()
 	direccion = models.CharField(max_length=150)
-	telefono = models.PositiveBigIntegerField()
+	telefono = models.CharField(max_length=50)
 
 	@property
 	def age(self):
