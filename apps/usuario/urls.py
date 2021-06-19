@@ -6,7 +6,7 @@ app_name = 'usuario'
 
 urlpatterns = [
     path('',
-        LoginView.as_view(template_name='index.html'),
+        LoginView.as_view(template_name='usuario/index.html'),
         name='login'
         ),
     path('registrar/',
@@ -17,24 +17,24 @@ urlpatterns = [
          name='logout'),
     path('reset/password_reset',
          PasswordResetView.as_view(), {
-             'template_name': 'registration/password_reset_form.html',
-             'email_template_name': 'registration/password_reset_email.html'
+             'template_name': 'usuario/password/password_reset_form.html',
+             'email_template_name': 'usuario/password/password_reset_email.html'
          },
          name='password_reset'),
     path('password_reset_done',
          PasswordResetDoneView.as_view(), {
-             'template_name': 'registration/password_reset_done.html'
+             'template_name': 'usuario/password/password_reset_done.html'
          },
          name='password_reset_done'),
     path('reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$',
          PasswordResetConfirmView.as_view(), {
-             'template_name': 'registration/password_reset_confirm.html'
+             'template_name': 'usuario/password/password_reset_confirm.html'
          },
          name='password_reset_confirm'
          ),
     path('reset/done',
          PasswordResetCompleteView.as_view(), {
-             'template_name': 'registration/password_reset_complete.html'
+             'template_name': 'usuario/password/password_reset_complete.html'
          },
          name='password_reset_complete'),
 ]
