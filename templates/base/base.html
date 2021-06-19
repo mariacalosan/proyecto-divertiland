@@ -8,6 +8,9 @@
     {% block extrastatic %} {% endblock %}
 
     <title>{% block title %}Document {% endblock %}</title>
+
+	  {% load bootstrap4 %}
+	  {% bootstrap_css %}
   </head>
   <body>
     <div class="container">
@@ -92,5 +95,6 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     {% block extrajs %} {% endblock %}
+    {% bootstrap_javascript jquery='full' %}
   </body>
 </html>
