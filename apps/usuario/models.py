@@ -1,9 +1,11 @@
 from django.db import models
-from datetime import date
 from django.contrib.auth.models import User
+from proyecto.models import AuditarModel
+from datetime import date
+
 
 # Create your models here.
-class Cliente(models.Model):
+class Cliente(AuditarModel):
 	usuario = models.OneToOneField(User, on_delete=models.CASCADE)
 	identificacion = models.PositiveBigIntegerField()
 	fecha_nacimiento = models.DateField()

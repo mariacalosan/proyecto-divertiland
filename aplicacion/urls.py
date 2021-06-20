@@ -7,7 +7,7 @@ from . import views
 app_name = 'aplicacion'
 
 router = routers.DefaultRouter()
-router.register(r'sales', views.SaleViewSet)
+# router.register(r'sales', views.SaleViewSet)
 
 
 urlpatterns = [

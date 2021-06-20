@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'aplicacion',
     'rest_framework',
     'apps.usuario',
+    'apps.atraccion',
     'bootstrap4',
 ]
 

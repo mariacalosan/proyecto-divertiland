@@ -9,7 +9,8 @@ from . import serializers
 def index(request):
     return render(request, 'aplicacion/index.html')
 
-
+'''
 class SaleViewSet(viewsets.ModelViewSet):
     queryset = models.Sale.objects.all()
     serializer_class = serializers.SaleSerializer
+'''
