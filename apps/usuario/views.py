@@ -6,6 +6,7 @@ from apps.usuario.models import Cliente
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
+from django.contrib.auth import logout
 
 
 class RegistroUsuario(CreateView):
@@ -51,3 +52,10 @@ class RegistroUsuario(CreateView):
 
 			# si el formulario no esta correcto lo va a dirigir a la data que el usario ya tenia para que vuelva a ingresar los datos correctamente 
 			return self.render_to_response(self.get_context_data(form=formulario_usuario, form2=formulario_cliente))
+
+def logout_view(request):
+    # Desconectar usuario
+    logout(request)
+
+    # Redirigir a la página de inicio
+    return HttpResponseRedirect(reverse_lazy('aplicacion:index'))

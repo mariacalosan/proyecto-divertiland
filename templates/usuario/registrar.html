@@ -1,20 +1,24 @@
-{% extends 'base/base.html' %} {% block content %}
+{% extends 'base/base.html' %}
+
+{% block titulo %}Registrar{% endblock %}
+
+{% block content %}
 <form method="post">
   {% csrf_token %}
   {% if form.errors %}
-{% for campo in form %}
-  {% for error in campo.errors %}
-      <div class="alert alert-danger">
-          <strong>{{ campo.label }} - {{ error | escape }}</strong>
-      </div>
-  {% endfor %}
-  {% for error in form.non_field_errors %}
-    <div class="alert alert-danger">
-        <strong>{{campo.label}} - { error | escape }} </strong>
-    </div>
-  {% endfor %}
-{% endfor %}
-{% endif %}
+    {% for campo in form %}
+      {% for error in campo.errors %}
+          <div class="alert alert-danger">
+              <strong>{{ campo.label }} - {{ error | escape }}</strong>
+          </div>
+      {% endfor %}
+      {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{campo.label}} - { error | escape }} </strong>
+        </div>
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
 
   {{form}}
   {{form2}}

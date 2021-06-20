@@ -1,6 +1,6 @@
-from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView, logout_then_login
+from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from django.urls import path
-from apps.usuario.views import RegistroUsuario
+from .views import RegistroUsuario, logout_view
 
 app_name = 'usuario'
 
@@ -13,7 +13,7 @@ urlpatterns = [
          RegistroUsuario.as_view(),
          name="registrar"),
     path('logout/',
-         logout_then_login,
+         logout_view,
          name='logout'),
     path('reset/password_reset',
          PasswordResetView.as_view(), {
@@ -26,7 +26,7 @@ urlpatterns = [
              'template_name': 'usuario/password/password_reset_done.html'
          },
          name='password_reset_done'),
-    path('reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$',
+    path('reset/<uidb64>/<token>/',
          PasswordResetConfirmView.as_view(), {
              'template_name': 'usuario/password/password_reset_confirm.html'
          },
