@@ -36,6 +36,7 @@ class RegistroUsuario(CreateView):
 				usuario = formulario_usuario.save(commit=False)
 				cliente = formulario_cliente.save(commit=False)
 
+				#	este try control de errores si hay un error  va ejecutar la parte del except (linea 48)
 				try:
 					usuario.save()
 
@@ -45,6 +46,7 @@ class RegistroUsuario(CreateView):
 					# si el usuario se registra exitosamente entonces lo va a dirigir a el index(home)
 					return HttpResponseRedirect(self.get_success_url())
 				except Exception as e:
+					# print imprime en la terminal lo que se le envie (le dicen logs)
 					print('error', e)
 
 			# si el formulario no esta correcto lo va a dirigir a la data que el usario ya tenia para que vuelva a ingresar los datos correctamente 
