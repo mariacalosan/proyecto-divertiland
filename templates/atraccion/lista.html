@@ -1,45 +1,60 @@
-{% extends 'base/base.html' %}
-{%block content%}
-  <section class="row products-masonry-container">
-    <div class="col">
-
-      <div class="products-masonry">
-        <div class="tab-content">
-          <div class="tab-pane fade show active" id="todos">
-            {# el condicional especifica que si object list es mayor a uno entonces me va a pinta el ciclo for de lo contario va a decior que no hay registros de la atracccion  #}
-            {% if object_list %}
-              <div class="card-columns">
-                {% for atraccion in object_list %}
-                  <div class="card">
-                    <img src="{{ atraccion.imagen }}" alt="imagen de la atraccion " class="card-img-top">
-                    <div class="card-body">
-                      <h5 class="card-title">{{ atraccion.nombre }}</h5>
-                      <p class="card-text">${{ atraccion.precio | floatformat:"0" }}</p>
-                    </div>
-                  </div>
-                {% endfor %}
+{% extends 'base/base.html' %} {%block content%}
+<section class="row products-masonry-container">
+  <div class="col">
+    <div class="products-masonry">
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="todos">
+          <!--el condicional especifica que si object list es mayor a uno
+          entonces me va a pinta el ciclo for de lo contario va a decior que no
+          hay registros de la atracccion--> 
+          {% if object_list %}
+          <div class="card-columns">
+            {% for atraccion in object_list %}
+            <a href="{% url 'atraccion:detalle' atraccion.pk %}">
+              <div class="card">
+                <img
+                  src="{{ atraccion.imagen }}"
+                  alt="imagen de la atraccion "
+                  class="card-img-top"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{{ atraccion.nombre }}</h5>
+                  <p class="card-text">
+                    ${{ atraccion.precio | floatformat:"0" }}
+                  </p>
+                </div>
               </div>
-            {% else %}
-              <h1>No hay registros de Atracciones</h1>
-            {% endif %}
+            </a>
+
+            {% endfor %}
           </div>
+          {% else %}
+          <h1>No hay registros de Atracciones</h1>
+          {% endif %}
         </div>
       </div>
-
     </div>
-  </section>
-  <ul class="paginador">
-    <li>
-      {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}">Atras</a>
-      {% endif %}
-    </li>
-    <li>
-      {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">Siguiente</a> 
-      {% endif %}
-    </li>
-  </ul>
+  </div>
+</section>
+<ul class="paginador">
+  <li>
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}">Atras</a>
+    {% endif %}
+  </li>
+  <li>
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+    {% endif %}
+  </li>
+</ul>
+{% if user.is_staff %}
+<div class="container">
+  <a href="{% url 'atraccion:crear' %}" class="btn btn-primary" type="submit"
+    >crear atraccion</a
+  >
+</div>
+{% endif %}
 <style>
   .paginador {
     text-align: center;
@@ -48,6 +63,8 @@
   .paginador li {
     display: inline-block;
   }
+  .card-img-top {
+    max-height: 230px;
+  }
 </style>
 {% endblock%}
-

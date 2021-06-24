@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<p>{{ object.nombre }}</p>
+<p>{{ object.descripcion }}</p>
+<p>{{ object.imagen }}</p>
+<p>{{ object.precio }}</p>
+{% if user.is_staff %}
+<a href="{% url 'atraccion:editar' atraccion.pk %}">Editar</a>
+<a href="{% url 'atraccion:eliminar' atraccion.pk %}">Eliminar</a>
+{% endif %}
+{% endblock %}

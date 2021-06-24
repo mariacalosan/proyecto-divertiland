@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'apps.usuario',
     'apps.atraccion',
     'bootstrap4',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
