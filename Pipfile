@@ -7,13 +7,14 @@ name = "pypi"
 django = "*"
 django-bootstrap4 = "*"
 djangorestframework = "*"
+django-widget-tweaks = "*"
 
 [dev-packages]
 pylint = "*"
 autopep8 = "*"
 
 [requires]
-python_version = "3.9"
+python_version = "*"
 
 [scripts]
 start           = "python manage.py runserver"
