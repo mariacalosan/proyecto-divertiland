@@ -1,4 +1,5 @@
-<header class="menu">
+{% load static %}
+<header class="menus">
   <div class="container">
     <div class="row justify-content-lg-between justify-content-center py-3 align-items-center">
 
@@ -11,7 +12,7 @@
       <div class="col-auto ">
         <ul class="nav">
           <li class="nav-item">
-            <a href="{% url 'aplicacion:index' %}" class="nav-link active">Home</a>
+            <a href="{% url 'aplicacion:index' %}" class="nav-link ">Home</a>
           </li>
 
           <li class="nav-item">
@@ -32,7 +33,7 @@
             <li class="nav-item botones-registro">
               <a href="{% url 'usuario:login' %}" class="nav-link">Iniciar Sesión</a>
 
-              <a href="{% url 'usuario:registrar'%}" class="nav-link ">Registrar</a>
+              <a href="{% url 'usuario:registrar'%}" class="nav-link " >Registrar</a>
             </li>
           {% endif %}
         </ul>
@@ -40,12 +41,3 @@
     </div>
   </div>
 </header>
-<style>
-  .botones-registro a{
-    display: inline-block;
-  }
-  .menu{
-    background-color: #ffcbf2;
-    padding: 20px;
-  }
-</style>

@@ -23,7 +23,7 @@ def Crear(request):
         if form.is_valid():
             form.save()
             return redirect('atraccion:lista')
-    form = CrearForm(instance=atraccion)  # creacionde el formulario
+    form = CrearForm(instance=Atraccion)  # creacionde el formulario
 
     # retorno a el formulario de html con el formulario creado
     return render(request, 'atraccion/crear.html', {'form': form})

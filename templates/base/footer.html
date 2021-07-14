@@ -1,53 +1,40 @@
-<footer class=" colores">
+{% load static %}
+
+<footer class="colores">
   <div class="piedepagina">
-    <h1>Divertiland</h1>
-    <div class="row justify-content-md-between align-items-center py-3">
+    <h2 class="titulo">nos encanta ver te feliz  </h2>
+    <img src="{% static 'img/tobogan.png' %}" alt="tobogan" class="logo">
 
-      <div class="col-md-4 text-center text-md-left order-md-0 order-1 my-4 my-md-0">
-        <p class="text-white mb-0"><small>&copy; Todos los derechos reservados</small></p>
-      </div>
-
-      <div class="col-md-4 texto">
-        <ul class="nav justify-content-center">
+    <div class="tex">
+        <ul class="nav ">
           <li class="nav-item">
-            <a href="#" class="nav-link text-white">Tienda</a>
+            <a href="#" class="nav-link ">atracciones</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link text-white">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-white">Contacto</a>
+            <a href="#" class="nav-link ">Nosotros</a>
           </li>
         </ul>
-      </div>
+    </div>
 
-      <div class="col-md-4 text-md-right text-center order-2 order-md-0">
-        <a href="#" class="text-white mr-1">
+    <div class=" text-center ">
+        <a href="https://www.facebook.com/mariacamila.lopez.16752754/" class="text-white mr-1">
           <i class="fab fa-facebook-f"></i>
+          <img src="{% static 'img/facebook.png' %}" alt="facebook"class="image">
         </a>
-        <a href="#" class="text-white mr-1">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="text-white mr-1">
+        <a href="https://www.instagram.com/" class="text-white mr-1">
           <i class="fab fa-instagram"></i>
+          <img src="{% static 'img/instagram.png'%}" alt="instagram" class="image">
         </a>
-        <a href="#" class="text-white">
-          <i class="fab fa-youtube"></i>
+        <a href=" https://wa.link/8ixv3u" class="text-white">
+          <i class="fab fa-whatsapp"></i>
+          <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp"class="image">
         </a>
-      </div>
-
+    </div>
+    <div class=" align-items-center py-3">
+      <p class="derechos">
+        <small>&copy; Todos los derechos reservados</small>
+      </p>
     </div>
   </div>
+
 </footer>
-<style>
-  .colores{
-    background-color: #ffcbf2;
-  }
-  .texto{
-    text-align: center;
-  }
-  .piedepagina{
-    padding:10px;
-    margin:15px;
-  }
-</style>

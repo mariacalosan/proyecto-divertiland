@@ -8,6 +8,7 @@
     <title>Divertyland - {% block titulo %}Inicio{% endblock %}</title>
 	  {% load bootstrap4 %}
 	  {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}" />
   </head>
   <body>
     {% block navbar %}
@@ -18,9 +19,9 @@
         <h4>Bloque de contenido vacio</h4>
       {% endblock %}
     </div>
-      {% block footer %}
-        {% include 'base/footer.html'%}
-      {% endblock %}
+    {% block footer %}
+      {% include 'base/footer.html'%}
+    {% endblock %}
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     {% block extrajs %} {% endblock %}
