@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'apps.usuario',
     'apps.atraccion',
+    'apps.venta',
     'bootstrap4',
     'widget_tweaks',
 ]
