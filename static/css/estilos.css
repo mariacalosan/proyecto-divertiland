@@ -4,9 +4,55 @@ body{
   word-spacing: 1px;
   font-family:sans-serif;
 }
+/*menu*/
+.menus{
+  background: linear-gradient( -160deg, #FFFD98 10%, #f0efac 90%);
+  padding: 30px;
+}
+a {
+  color:black;
+  text-decoration: none;
+  text-align: center;
+}
+
+/*base */
+.contenidos {
+  text-align: center;
+  padding: 30px;
+  margin-top:10px;
+  font-size: 25px;
+}
+.imagenes{
+  width: 20%;
+  display: flex;
+  margin: auto;
+  image-rendering: auto;
+  align-content:center;
+}
+.parrafo{
+  padding-top:20px;
+  margin-top: 10px;
+}
+.parrafos{
+  margin-top: 10px;
+  padding-top: 10px
+}
+.parrafoo{
+  margin-top: 10px;
+  padding-top: 10px
+}
+
 /*footer*/
 .colores{
   background-color: #FFFD98;
+  padding-top: 20px;
+  margin-top: 30px
+}
+.listar{
+  display:flex;
+  border:1px solid;
+  align-items: center;
+  border-color: aqua;
 }
 .tex {
   text-align: right;
@@ -39,13 +85,5 @@ body{
 .botones-registro a{
   display: inline-block;
 }
-.menus{
-  background-color: #FFFD98;
-  padding: 20px;
-}
-a {
-  color:black;
-  text-decoration: none;
-  text-align: center;
-}
+
 

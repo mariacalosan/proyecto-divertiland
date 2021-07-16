@@ -14,11 +14,33 @@
     {% block navbar %}
       {% include 'base/menu.html'%}
     {% endblock %}
-    <div class="container">
-      {% block content %}
-        <h4>Bloque de contenido vacio</h4>
-      {% endblock %}
-    </div>
+
+    {% block content %}
+
+    <main class="container">
+      <div class="container">
+
+        <h2 class="contenidos">Porque Queremos que tus días sean únicos </h2>
+
+        <p class="parrafo">
+          Nos encanta ver que disfrutas de nuestras atracciones en familia y ser la razon por la cual sonries
+          Nos encanta ver que disfrutas de nuestras atracciones en familia y ser la razon por la cual sonries
+          Nos encanta ver que disfrutas de nuestras atracciones en familia y ser la razon por la cual sonries
+        </p>
+
+        <div class="text-center">
+
+          <img src="{% static 'img/familias.jpg'%}" alt="Familia" class="imagenes">
+          <img src="{% static 'img/parejas.jpg'%}" alt="Parejas" class="imagenes">
+          <img src="{% static 'img/amigos.jpg'%}" alt="amigos" class="imagenes">
+
+        </div>
+
+      </div>
+    </main>
+
+    {% endblock %}
+
     {% block footer %}
       {% include 'base/footer.html'%}
     {% endblock %}
