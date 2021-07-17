@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<h1>hola mundo </h1>
+<p>{{ object.pagado }}</p>
+<p>{{ object | pprint }}</p>
+<p>{{ object.cliente | pprint }}</p>
+<p>{{ object.cliente.identificacion }}</p>
+<p>{{ object.cliente.usuario.username }}</p>
+{% if items %}
+  <div class="card-columns">
+    {% for item in items %}
+    <a href="{% url 'venta:eliminar-de-carrito' item.pk %}">
+      Eliminar
+    </a>
+    <p>{{ item.atraccion.nombre }}</p>
+    <p>{{ item.cantidad }}</p>
+
+    {% endfor %}
+  </div>
+{% else %}
+  <h1>No hay Items añadidos</h1>
+{% endif %}
+{% endblock %}

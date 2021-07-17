@@ -1,12 +1,17 @@
 {% extends 'base/base.html' %}
-{% load static %}
 {% block content %}
-<p>{{ object.nombre }}</p>
-<p>{{ object.descripcion }}</p>
-<p>{{ object.imagen }}</p>
-<p>{{ object.precio }}</p>
-{% if user.is_staff %}
-<a href="{% url 'atraccion:editar' atraccion.pk %}">Editar</a>
-<a href="{% url 'atraccion:eliminar' atraccion.pk %}">Eliminar</a>
-{% endif %}
+    <p>{{ object.nombre }}</p>
+    <p>{{ object.descripcion }}</p>
+    <p>{{ object.imagen }}</p>
+    <p>{{ object.precio }}</p>
+
+    {% if user.is_authenticated and not user.is_staff %}
+        <span >
+            <a href="{% url 'venta:agregar-a-carrito' atraccion.pk %}">Agregar al Carrito</a>
+        </span>
+    {% endif %}
+    {% if user.is_staff %}
+        <a href="{% url 'atraccion:editar' atraccion.pk %}">Editar</a>
+        <a href="{% url 'atraccion:eliminar' atraccion.pk %}">Eliminar</a>
+    {% endif %}
 {% endblock %}
