@@ -1,5 +1,5 @@
 from django.db import models
-from proyecto.models import AuditarModel
+from aplicacion.models import AuditarModel
 
 class Atraccion (AuditarModel):
 	nombre = models.CharField(max_length=100)

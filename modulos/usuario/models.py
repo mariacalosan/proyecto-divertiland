@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from proyecto.models import AuditarModel
+from aplicacion.models import AuditarModel
 from datetime import date
 
 

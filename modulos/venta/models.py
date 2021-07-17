@@ -1,9 +1,8 @@
-from proyecto.models import AuditarModel
 from django.db import models
 from datetime import datetime
-from proyecto.models import AuditarModel
-from apps.atraccion.models import Atraccion
-from apps.usuario.models import Cliente
+from aplicacion.models import AuditarModel
+from modulos.atraccion.models import Atraccion
+from modulos.usuario.models import Cliente
 
 # Create your models here.
 # clase/modelo

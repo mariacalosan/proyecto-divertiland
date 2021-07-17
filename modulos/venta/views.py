@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView, ListView, CreateView, UpdateView, DeleteView
-from apps.atraccion.models import Atraccion
+from modulos.atraccion.models import Atraccion
 from .models import Carrito, ItemCarrito
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from apps.usuario.models import Cliente
+from modulos.usuario.models import Cliente
 
 #Detalles de el carrito 
 class DetalleCarrito(DetailView):
@@ -20,10 +20,10 @@ class DetalleCarrito(DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         if not self.request.user.is_authenticated:
-            return redirect('aplicacion:index')
+            return redirect('index')
 
         if not self.object.cliente.usuario.id == self.request.user.id:
-            return redirect('aplicacion:index')
+            return redirect('index')
 
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
