@@ -1,4 +1,4 @@
-from apps.usuario.models import Cliente
+from .models import Cliente
 from django.shortcuts import render
 from django.views.generic import CreateView
 from apps.usuario.forms import ClienteForm, RegistroForm
