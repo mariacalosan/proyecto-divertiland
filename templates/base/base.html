@@ -1,52 +1,84 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% block extrastatic %} {% endblock %}
-    <title>Divertyland - {% block titulo %}Inicio{% endblock %}</title>
-	  {% load bootstrap4 %}
-	  {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/estilos.css' %}" />
-  </head>
-  <body>
-    {% block navbar %}
-      {% include 'base/menu.html'%}
-    {% endblock %}
 
-    {% block content %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block extrastatic %} {% endblock %}
+  <title>Divertyland - {% block titulo %}Inicio{% endblock %}</title>
+  {% load bootstrap4 %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}" />
+</head>
 
-    <main class="container">
-      <div class="container">
+<body>
 
-        <h2 class="contenidos">Porque Queremos que tus días sean únicos </h2>
+  {% block navbar %}
+  {% include 'base/menu.html'%}
+  {% endblock %}
 
-        <p class="parrafo">
-          Nos encanta ver que disfrutas de nuestras atracciones en familia y ser la razon por la cual sonries
-          Nos encanta ver que disfrutas de nuestras atracciones en familia y ser la razon por la cual sonries
-          Nos encanta ver que disfrutas de nuestras atracciones en familia y ser la razon por la cual sonries
-        </p>
+  {% block content %}
 
-        <div class="text-center">
+  <div class="color">
 
-          <img src="{% static 'img/familias.jpg'%}" alt="Familia" class="imagenes">
-          <img src="{% static 'img/parejas.jpg'%}" alt="Parejas" class="imagenes">
-          <img src="{% static 'img/amigos.jpg'%}" alt="amigos" class="imagenes">
+    <h1 class="contenidos">Nos encanta verte feliz</h1>
 
+    <div class="text-center my-5">
+      <img class="img-fluid rounded-circle mb-5" src="static/img/tobogan.png" alt="tobogan" />
+      <h1 class="fs-3 fw-bolder">por que tu felicidad es importante </h1>
+      <p class=" mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium commodi suscipit modi at
+        quam ab tenetur consequuntur rerum dolores cumque. Unde, esse dignissimos? Iste esse, voluptate totam repellat
+        maxime iusto.</p>
+    </div>
+
+  </div>
+
+  <!-- Content section-->
+  <section class="py-5">
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <h2>Full Width Backgrounds</h2>
+          <p class="lead">A single, lightweight helper class allows you to add engaging, full width background images to
+            sections of your page.</p>
+          <p class="mb-0">The universe is almost 14 billion years old, and, wow! Life had no problem starting here on
+            Earth! I think it would be inexcusably egocentric of us to suggest that we're alone in the universe.</p>
         </div>
-
       </div>
-    </main>
+    </div>
+  </section>
+<!--hacer carrusel de imagen https://codepen.io/jlnljn/pen/qRxqzR https://startbootstrap.com/previews/shop-homepage -->
+  <div class="py-5 bg-image-full">
+    <img src="static/img/familias.jpg" alt="familia">
+    <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+    <div style="height: 20rem"></div>
+  </div>
 
-    {% endblock %}
+  <section class="py-5">
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <h2>Engaging Background Images</h2>
+          <p class="lead">The background images used in this template are sourced from Unsplash and are open source and
+            free to use.</p>
+          <p class="mb-0">I can't tell you how many people say they were turned off from science because of a science
+            teacher that completely sucked out all the inspiration and enthusiasm they had for the course.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    {% block footer %}
-      {% include 'base/footer.html'%}
-    {% endblock %}
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    {% block extrajs %} {% endblock %}
-    {% bootstrap_javascript jquery='full' %}
-  </body>
+
+  {% endblock %}
+
+  {% block footer %}
+  {% include 'base/footer.html'%}
+  {% endblock %}
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  {% block extrajs %} {% endblock %}
+  {% bootstrap_javascript jquery='full' %}
+</body>
+
 </html>
