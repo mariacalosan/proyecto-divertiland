@@ -6,8 +6,8 @@ body{
 }
 /*menu*/
 .menus{
-  background: linear-gradient( -160deg, #FFFD98 10%, #f0efac 90%);
-  padding: 30px;
+  background: linear-gradient( -160deg, #FFFD98 10%, #caf0f8 90%);
+  padding: 10px;
 }
 a {
   color:black;
@@ -19,19 +19,21 @@ a {
 .contenidos {
   text-align: center;
   padding: 30px;
-  margin-top:10px;
+  margin-top:2%;
   font-size: 25px;
+
 }
 .imagenes{
-  width: 20%;
-  display: flex;
-  margin: auto;
-  image-rendering: auto;
-  align-content:center;
+  width: 60%;
+  height: 45%;
+  padding: 2%;
+  margin-bottom: 4%;
+
 }
 .parrafo{
   padding-top:20px;
-  margin-top: 10px;
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
 .parrafos{
   margin-top: 10px;
@@ -44,15 +46,13 @@ a {
 
 /*footer*/
 .colores{
-  background-color: #FFFD98;
+  background: linear-gradient( -160deg,  #caf0f8 10%, #FFFD98 90%);
   padding-top: 20px;
   margin-top: 30px
 }
 .listar{
   display:flex;
-  border:1px solid;
   align-items: center;
-  border-color: aqua;
 }
 .tex {
   text-align: right;
@@ -71,7 +71,7 @@ a {
 }
 .titulo{
   color: rgb(0, 0, 0);
-  text-align: center;
+  text-align: left;
   text-transform: capitalize;
 }
 .logo{
@@ -85,5 +85,25 @@ a {
 .botones-registro a{
   display: inline-block;
 }
+/*detalles de atraccion*/
+.paginador {
+  text-align: center;
+  list-style: none;
+}
+.paginador li {
+  display: inline-block;
+}
+.card-img-top {
+  max-width: 20%;
+  height: auto;
+  margin-bottom: 4%;
+}
+.atraccion{
+  margin-top: 4%;
+}
+.estilostitulo{
+  margin-bottom: 4%;
+}
+
 
 

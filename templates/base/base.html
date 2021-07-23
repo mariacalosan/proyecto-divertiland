@@ -2,51 +2,80 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     {% block extrastatic %} {% endblock %}
     <title>Divertyland - {% block titulo %}Inicio{% endblock %}</title>
-	  {% load bootstrap4 %}
-	  {% bootstrap_css %}
+    <link
+      rel="shortcut icon"
+      href="static/img/tobogan.png"
+      type="image/x-icon"
+    />
+    {% load bootstrap4 %} {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}" />
   </head>
   <body>
-    {% block navbar %}
-      {% include 'base/menu.html'%}
-    {% endblock %}
+    {% block navbar %} 
+    {% include 'base/menu.html'%}
+    {% endblock %} 
 
-    {% block content %}
+{% block content %}
 
     <main class="container">
-      <div class="container">
-
-        <h2 class="contenidos">Porque Queremos que tus días sean únicos </h2>
-
-        <p class="parrafo">
-          Nos encanta ver que disfrutas de nuestras atracciones en familia y ser la razon por la cual sonries
-          Nos encanta ver que disfrutas de nuestras atracciones en familia y ser la razon por la cual sonries
-          Nos encanta ver que disfrutas de nuestras atracciones en familia y ser la razon por la cual sonries
-        </p>
-
-        <div class="text-center">
-
-          <img src="{% static 'img/familias.jpg'%}" alt="Familia" class="imagenes">
-          <img src="{% static 'img/parejas.jpg'%}" alt="Parejas" class="imagenes">
-          <img src="{% static 'img/amigos.jpg'%}" alt="amigos" class="imagenes">
-
+      <section class="page-section">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-heading text-uppercase contenidos "> servicios</h2>
+            <h3 class="section-subheading parrafo">
+              te ofrecemos la compra de boletas para las atracciones que manejas facilitandote el infreso a nuestras intalaciones 
+            </h3>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-4">
+              <span class="fa-stack fa-4x">
+                <img src="static/img/amigos.jpg" class="imagenes" alt="amigos">
+              </span>
+              <h4 class="my-3">E-Commerce</h4>
+              <p class="text-muted">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
+                maxime quam architecto quo inventore harum ex magni, dicta
+                impedit.
+              </p>
+            </div>
+            <div class="col-md-4">
+              <span class="fa-stack fa-4x">
+                <img src="static/img/familias.jpg" class="imagenes" alt="familias">
+              </span>
+              <h4 class="my-3">Responsive Design</h4>
+              <p class="text-muted">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
+                maxime quam architecto quo inventore harum ex magni, dicta
+                impedit.
+              </p>
+            </div>
+            <div class="col-md-4">
+              <span class="fa-stack fa-4x">
+                <img src="static/img/parejas.jpg" class="imagenes" alt="parejas" >
+              </span>
+              <h4 class="my-3">Web Security</h4>
+              <p class="text-muted">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
+                maxime quam architecto quo inventore harum ex magni, dicta
+                impedit.
+              </p>
+            </div>
+          </div>
         </div>
-
-      </div>
+      </section>
     </main>
 
-    {% endblock %}
-
-    {% block footer %}
-      {% include 'base/footer.html'%}
+{% endblock %}
+     
+    {% block footer %} 
+    {% include 'base/footer.html'%} 
     {% endblock %}
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    {% block extrajs %} {% endblock %}
-    {% bootstrap_javascript jquery='full' %}
+    {% block extrajs %} {% endblock %} {% bootstrap_javascript jquery='full' %}
   </body>
 </html>

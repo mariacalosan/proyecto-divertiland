@@ -1,13 +1,23 @@
 {% extends 'base/base.html' %}
 {%block content%}
+
 <section class="row products-masonry-container">
+  <div class="container">
+    <div class="text-center atraccion">
+      <div class="estilostitulo">
+        <h2 class=" tituloatraccion ">Atracciones</h2>
+      <h3 class="section-subheading">
+        que la aventura y la diversion te acompañe
+      </h3>
+      </div>
+    </div>
   <div class="col">
     <div class="products-masonry">
       <div class="tab-content">
         <div class="tab-pane fade show active" id="todos">
           <!--el condicional especifica que si object list es mayor a uno
           entonces me va a pinta el ciclo for de lo contario va a decior que no
-          hay registros de la atracccion--> 
+          hay registros de la atracccion-->
           {% if object_list %}
           <div class="card-columns">
             {% for atraccion in object_list %}
@@ -56,16 +66,4 @@
   >
 </div>
 {% endif %}
-<style>
-  .paginador {
-    text-align: center;
-    list-style: none;
-  }
-  .paginador li {
-    display: inline-block;
-  }
-  .card-img-top {
-    max-height: 230px;
-  }
-</style>
 {% endblock%}

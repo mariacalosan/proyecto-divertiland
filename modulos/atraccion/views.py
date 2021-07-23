@@ -9,7 +9,7 @@ from .forms import CrearForm
 class Lista(ListView):
     queryset = Atraccion.objects.all().filter(estado=True)
     template_name = 'atraccion/lista.html'
-    paginate_by = 3
+    paginate_by = 4
 
 
 class Detalle(DetailView):
