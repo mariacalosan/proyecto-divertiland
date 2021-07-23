@@ -1,0 +1,41 @@
+{% load static %}
+
+<footer class="colores">
+  <div>
+        <ul class="listar">
+          <li class="nav-item">
+            <a href="{% url 'index' %}" class="nav-link ">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'atraccion:lista' %}" class="nav-link ">atracciones</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link ">Nosotros</a>
+          </li>
+        </ul>
+  </div>
+
+    <div class=" text-center ">
+        <a href="https://www.facebook.com/mariacamila.lopez.16752754/" class="text-white mr-1">
+          <i class="fab fa-facebook-f"></i>
+          <img src="{% static 'img/facebook.png' %}" alt="facebook"class="image">
+        </a>
+        <a href="https://www.instagram.com/" class="text-white mr-1">
+          <i class="fab fa-instagram"></i>
+          <img src="{% static 'img/instagram.png'%}" alt="instagram" class="image">
+        </a>
+        <a href=" https://wa.link/8ixv3u" class="text-white">
+          <i class="fab fa-whatsapp"></i>
+          <img src="{% static 'img/whatsapp.png' %}" alt="whatsapp"class="image">
+        </a>
+    </div>
+    <div class="piedepagina">
+      <h2 class="titulo">nos encanta ver te feliz  </h2>
+      <div class="tex">
+    <div class=" align-items-center py-3">
+      <p class="derechos">
+        <small>&copy; Todos los derechos reservados</small>
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,9 +1,12 @@
 body{
-  background-color: #FCFAFA;
-  font-weight: normal;
-  word-spacing: 1px;
-  font-family:sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+  background-image: url(/img/algodondeazucar.jpg)
 }
+
 /*menu*/
 .menus{
   background: linear-gradient( -160deg, #FFFD98 10%, #caf0f8 90%);
@@ -16,6 +19,9 @@ a {
 }
 
 /*base */
+.color{
+  background-color: aqua;
+}
 .contenidos {
   text-align: center;
   padding: 30px;
@@ -104,6 +110,7 @@ a {
 .estilostitulo{
   margin-bottom: 4%;
 }
+
 
 
 
