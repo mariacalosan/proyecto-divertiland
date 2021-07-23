@@ -1,40 +1,23 @@
 {% extends 'base/base.html' %}
 {% block content %}
-    <div class="detallesproducto">
+    <div class="detallesproducto container">
 
         <img src="{{ object.imagen }}" alt="" class="imgs"/>
-        <p>{{ object.nombre }}</p>
-        <p>{{ object.descripcion }}</p>
-        <p>{{ object.precio }}</p>
+        <h1 class="titulodetalle">{{ object.nombre }}</h1>
+        <p class="textodetalle">{{ object.descripcion }}</p>
+        <h5 class="preciodetalle">{{ object.precio }}</h5>
 
     </div>
 
     {% if user.is_authenticated and not user.is_staff %}
-        <span >
-            <a href="{% url 'venta:agregar-a-carrito' atraccion.pk %}">Agregar al Carrito</a>
+        <span class="editardetalle">
+            <a class="botonagregar" href="{% url 'venta:agregar-a-carrito' atraccion.pk %}">Agregar al Carrito</a>
         </span>
     {% endif %}
     {% if user.is_staff %}
-        <a href="{% url 'atraccion:editar' atraccion.pk %}">Editar</a>
-        <a href="{% url 'atraccion:eliminar' atraccion.pk %}">Eliminar</a>
+        <div  class="editardetalle" >
+        <a class="botoneditar" href="{% url 'atraccion:editar' atraccion.pk %}">Editar</a>
+        <a class="botoneliminar" href="{% url 'atraccion:eliminar' atraccion.pk %}">Eliminar</a>
+        </div>
     {% endif %}
-
-<style>
-.detallesproducto{
-
-    border: 15px;
-    border-color: red;
-    text-align: center;
-}
-p{
-    text-align: center;
-}
-.imgs{
-  max-width: 10%;
-  height: auto;
-  margin-bottom: 4%;
-  border: 10px;
-  border-color: red;
-}
-</style>
 {% endblock %}

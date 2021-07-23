@@ -91,7 +91,7 @@ a {
 .botones-registro a{
   display: inline-block;
 }
-/*detalles de atraccion*/
+/*lista de atraccion  */
 .paginador {
   text-align: center;
   list-style: none;
@@ -100,7 +100,6 @@ a {
   display: inline-block;
 }
 .card-img-top {
-  width: 60%;
   margin-bottom: 4%;
   height: 45%;
   padding: 2%;
@@ -118,7 +117,61 @@ a {
 .estilostitulo{
   margin-bottom: 4%;
 }
-
-
+/* detalle de atraccion  */
+.detallesproducto{
+  text-align: center;
+  margin-bottom: 4%;
+  background-color:#dcf8fd;
+  margin-top: 4%;
+  padding: 2%;
+}
+p{
+  text-align: center;
+}
+.imgs{
+max-width: 50%;
+height: 45%;
+margin-bottom: 4%;
+border: 10px;
+border-color: red;
+}
+.textodetalle{
+  text-transform: capitalize;
+}
+.titulodetalle{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.preciodetalle{
+  margin-top: 2%;
+}
+.editardetalle{
+  text-align: center;
+}
+.botoneditar{
+  text-align: center;
+  border: 3px solid;
+  border-color:#FFFD98;
+  padding: 6px;
+  margin-right: 2%;
+}
+.botoneliminar{
+  text-align: center;
+  border: 3px solid;
+  border-color:#FFFD98;
+  padding: 6px;
+  margin-right: 2%;
+}
+/* agregar a el carrito */
+.botonagregar{
+  text-align: center;
+  border: 3px solid;
+  border-color:#FFFD98;
+  padding: 6px;
+  margin-right: 2%;
+}
+.detallecarrito{
+  text-align: center;
+}
 
 
