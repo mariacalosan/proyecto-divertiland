@@ -100,9 +100,17 @@ a {
   display: inline-block;
 }
 .card-img-top {
-  max-width: 20%;
-  height: auto;
+  width: 60%;
   margin-bottom: 4%;
+  height: 45%;
+  padding: 2%;
+  margin-bottom: 4%;
+}
+.atracciones{
+  margin-bottom: 4%;
+  background-color:#dcf8fd;
+  margin-top: 4%;
+  padding: 2%;
 }
 .atraccion{
   margin-top: 4%;
