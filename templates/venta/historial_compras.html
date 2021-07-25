@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+{%block content%}
+<section>
+  <h2 class="">Historial</h2>
+  <div>
+    {% if  object_list %}
+    <div class="card-columns">
+      {% for carrito in object_list %}
+      <a href="{% url 'venta:carrito' carrito.pk %}">
+        <div class="card">
+          <div class="card-body">
+            {% if not carrito.pagado %}
+              <small
+                style="position: absolute; left: 50%; transform: translate(-50%, -50%); bottom: 0; color: #4caf50; font-style: oblique; font-weight: bold;"
+              >
+                Carrito Actual
+              </small>
+            {% endif %}
+            <p>
+              Carrito número {{ carrito.pk}} 
+              {% if user.is_staff %}
+                de {{ carrito.cliente.usuario.username }}
+              {% endif %}
+              creado el: </p>
+            <h5 class="card-title">{{ carrito.fecha_creacion }}</h5>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <h1>No hay historial de carrito </h1>
+    {% endif %}
+  </div>
+
+  <ul class="paginador">
+    <li>
+      {% if page_obj.has_previous %}
+      <a class="botoneditar" href="?page={{ page_obj.previous_page_number }}">
+        Atras
+      </a>
+      {% endif %}
+    </li>
+    <li>
+      {% if page_obj.has_next %}
+      <a class="botoneliminar" href="?page={{ page_obj.next_page_number }}">
+        Siguiente
+      </a>
+      {% endif %}
+    </li>
+  </ul>
+</section>
+{% endblock%}

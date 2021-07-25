@@ -16,47 +16,59 @@
       <div class="col-auto">
         <ul class="nav">
           <li class="nav-item">
-            <a href="{% url 'index' %}" class="nav-link">Home</a>
+            <a href="{% url 'index' %}" class="nav-link">
+              Home
+            </a>
           </li>
-
           <li class="nav-item">
-            <a href="{% url 'atraccion:lista' %}" class="nav-link"
-              >Atraccciones</a
-            >
+            <a href="{% url 'atraccion:lista' %}" class="nav-link">
+              Atraccciones
+            </a>
           </li>
-
           <li class="nav-item">
             <a
               href="https://api.whatsapp.com/send/?phone=573008392839&text=Hola%20vengo%20de%20Divertiland&app_absent=0"
-              class="nav-link"
-              >Contacto</a
-            >
+              class="nav-link">
+              Contacto
+            </a>
           </li>
           {% if user.is_authenticated %} {% if user.is_staff %}
           <li class="nav-item">
-            <a href="{% url 'admin:index' %}" class="nav-link">Admin</a>
+            <a href="{% url 'venta:historial-admin' %}" class="nav-link">
+              Lista de Carritos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'admin:index' %}" class="nav-link">
+              Admin
+            </a>
           </li>
           {% else %}
           <li class="nav-item">
+            <a href="{% url 'venta:historial' %}" class="nav-link">
+              Historial de Compras
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{% url 'venta:carrito' carrito.pk  %}" class="nav-link">
-              Carrito ({{ cantidadItems }})</a
-            >
+              Carrito ({{ cantidadItems }})
+            </a>
           </li>
           {% endif %}
           <li class="nav-item">
-            <a href="{% url 'usuario:logout' %}" class="nav-link"
-              >Cerrar Sesión</a
-            >
+            <a href="{% url 'usuario:logout' %}" class="nav-link">
+              Cerrar Sesión
+            </a>
           </li>
           {% else %}
           <li class="nav-item botones-registro">
-            <a href="{% url 'usuario:login' %}" class="nav-link"
-              >Iniciar Sesión</a
-            >
+            <a href="{% url 'usuario:login' %}" class="nav-link">
+              Iniciar Sesión
+            </a>
 
-            <a href="{% url 'usuario:registrar'%}" class="nav-link"
-              >Registrar</a
-            >
+            <a href="{% url 'usuario:registrar'%}" class="nav-link">
+              Registrar
+            </a>
           </li>
           {% endif %}
         </ul>

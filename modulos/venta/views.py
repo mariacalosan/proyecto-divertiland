@@ -5,6 +5,16 @@ from .models import Carrito, ItemCarrito
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from modulos.usuario.models import Cliente
 
+# Historial Compras
+class HistorialCompras(ListView):
+    paginate_by = 3
+    template_name='venta/historial_compras.html'
+    context_object_name = 'historial'
+    def get_queryset(self):
+        cliente = Cliente.objects.get(usuario_id = self.request.user.id)
+        queryset = Carrito.objects.order_by('-fecha_creacion').filter(cliente = cliente)
+        return queryset
+
 #Detalles de el carrito 
 class DetalleCarrito(DetailView):
     model = Carrito
@@ -22,11 +32,20 @@ class DetalleCarrito(DetailView):
         if not self.request.user.is_authenticated:
             return redirect('index')
 
-        if not self.object.cliente.usuario.id == self.request.user.id:
+        if (not self.object.cliente.usuario.id == self.request.user.id) and (not self.request.user.is_staff):
             return redirect('index')
 
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
+
+
+class AdminHistorialCompras(ListView):
+    paginate_by = 3
+    template_name='venta/historial_compras.html'
+    context_object_name = 'historial'
+    def get_queryset(self):
+        queryset = Carrito.objects.order_by('-fecha_creacion').all()
+        return queryset
 
 #agregara a el carrito las atraciones 
 def agregar_a_carrito(request, pk):
@@ -46,4 +65,18 @@ def eliminar_de_carrito(request, pk):
     carrito = carritoItem.carrito.pk
     if carritoItem:
         carritoItem.delete()
-    return redirect('venta:carrito', pk = carrito)
+    return redirect('venta:carrito', pk = pk)
+
+def marcar_pagado(request, pk):
+    if request.user.is_staff:
+        carrito = Carrito.objects.get(pk = pk)
+        carrito.pagado = not carrito.pagado
+        carrito.save()
+    return redirect('venta:carrito', pk = pk)
+
+def eliminar_carrito(request, pk):
+    if request.user.is_staff:
+        carrito = Carrito.objects.get(pk = pk)
+        if carrito:
+            carrito.delete()
+    return redirect('index')

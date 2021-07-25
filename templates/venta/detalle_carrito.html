@@ -1,5 +1,9 @@
 {% extends 'base/base.html' %}
 
+{% block titulo%}
+  Detalle
+{% endblock %}
+
 {% block content %}
 <h1>hola mundo </h1>
 <p>{{ object.pagado }}</p>
@@ -22,4 +26,19 @@
 {% else %}
   <h1>No hay Items añadidos</h1>
 {% endif %}
-{% endblock %}
+
+{% if user.is_staff %}
+  <a href="{% url 'venta:eliminar-carrito' object.pk %}" class="nav-link">
+    Eliminar Carrito
+  </a>
+  {% if object.pagado %}
+      <a href="{% url 'venta:pagado' object.pk %}" class="nav-link">
+        Marcar como No Pagado
+      </a>
+    {% else %}
+      <a href="{% url 'venta:pagado' object.pk %}" class="nav-link">
+        Marcar como Pagado
+      </a>
+    {% endif %}
+  {% endif %}
+{% endblock%}

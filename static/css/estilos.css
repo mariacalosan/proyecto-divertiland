@@ -19,6 +19,17 @@ a {
 }
 
 /*base */
+.imagenbase{ 
+  width: 20%;
+  height: 10%;
+  padding: 2%;
+  margin-top:2%;
+  border: 2px solid;
+  border-color: #FFFD98;
+}
+.contenidopagina{
+  min-height: 76vh;
+}
 .color{
   background-color: aqua;
 }
@@ -162,7 +173,7 @@ border-color: red;
   padding: 6px;
   margin-right: 2%;
 }
-/* agregar a el carrito */
+/* agregar a el carrito se encuentra en detalles.html*/
 .botonagregar{
   text-align: center;
   border: 3px solid;
@@ -170,8 +181,10 @@ border-color: red;
   padding: 6px;
   margin-right: 2%;
 }
-.detallecarrito{
+.detallesproducto{
   text-align: center;
 }
+/* historial carrito  */
+
 
 
